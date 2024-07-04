@@ -1,7 +1,8 @@
 FROM php:5-apache
 
 ADD https://github.com/rapid7/hackazon/archive/master.zip /tmp/
-RUN apt update && apt install sendmail unzip -y \
+RUN echo "deb http://archive.debian.org/debian stretch main contrib non-free" > /etc/apt/sources.list \
+    && apt update && apt install sendmail unzip -y \
     && cd /tmp/ && unzip master.zip && cp -R hackazon-master/* /var/www/html/ \
     && a2enmod rewrite \
     && cd /var/www/html/ && php composer.phar install -o --prefer-dist  && php composer.phar self-update  \
