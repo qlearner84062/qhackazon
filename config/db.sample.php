@@ -3,15 +3,15 @@
 return array(
 	'default' => array(
 		'user'=>'hackazon',
-		'password' => 'hackazon',
+		'password' => '<**>',
 		'driver' => 'PDOV',
 
 		//'Connection' is required if you use the PDO driver
-		'connection'=>'mysql:host=hackazon_db;dbname=hackazon',
+		'connection'=>'mysql:host=hackazon_qdb;dbname=hackazon',
 
 		// 'db' and 'host' are required if you use Mysql driver
 		'db' => 'hackazon',
-		'host' => 'hackazon_db',
+		'host' => 'hackazon_qdb',
         'port' => 3306
 	)
 );
