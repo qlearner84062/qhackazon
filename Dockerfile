@@ -14,6 +14,7 @@ ADD config/db.sample.php /var/www/html/assets/config/db.php
 RUN chown -R www-data:www-data /var/www/html/
 
 ADD config/000-default.conf /etc/apache2/sites-available/000-default.conf
+ADD config/php.ini /usr/local/etc/php/php.ini
 
 
 # apache env vars

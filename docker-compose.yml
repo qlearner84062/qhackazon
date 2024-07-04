@@ -1,20 +1,22 @@
-version: '2'
+version: '3'
 services:
-  hackazon_www:
+  hackazon_qwww:
     build: .
     restart: always
     ports:
       - "80:80"
     depends_on:
-      - hackazon_db
+      - hackazon_qdb
 
-  hackazon_db:
+  hackazon_qdb:
     image: mysql:5.5
     environment:
-      - MYSQL_ROOT_PASSWORD=hackazon
-      - MYSQL_DATABASE=hackazon
-      - MYSQL_USER=hackazon
-      - MYSQL_PASSWORD=hackazon
+      MYSQL_ROOT_PASSWORD: <>
+      MYSQL_DATABASE: hackazon
+      MYSQL_USER: hackazon
+      MYSQL_PASSWORD: <>
+    ports:
+      - "3306:3306"
     restart: always
     volumes:
       - ./db_init/hackazon/:/docker-entrypoint-initdb.d:ro
